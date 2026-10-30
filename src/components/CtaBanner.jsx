@@ -14,7 +14,7 @@ export default function CtaBanner({ onStart }) {
         </div>
         <div className="cta-mascot">
           <img
-            src="/seedling-backpack.png"
+            src={`${import.meta.env.BASE_URL}seedling-backpack.png`}
             alt="Greeno mascot with backpack"
             width="200"
             height="200"

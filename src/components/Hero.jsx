@@ -32,7 +32,7 @@ export default function Hero({ onBrowseMissions, onBrowseChallenges }) {
             <span className="hero-float-star">🌟</span>
             <span className="hero-float-star">✨</span>
             <img
-              src="/greeno-wave.png"
+              src={`${import.meta.env.BASE_URL}greeno-wave.png`}
               alt="Greeno, the Ecoventure mascot waving hello"
               width="520"
               height="520"
