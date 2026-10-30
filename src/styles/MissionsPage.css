@@ -1,0 +1,658 @@
+/* ============================================
+   Ecoventure — Missions Page Styles
+   Spacious, modern, and harmonious with the site
+   ============================================ */
+
+/* ── Page Layout ── */
+.missions-page {
+  min-height: 100vh;
+  background: linear-gradient(145deg, #eef6e8 0%, #e8f2f6 40%, #f2f8ec 100%);
+  font-family: var(--font-family);
+  color: var(--gray-800);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Top Header / Sticky Nav ── */
+.missions-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e2ece0;
+  box-shadow: 0 2px 14px rgba(24, 70, 44, 0.04);
+}
+
+.missions-header-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+/* ── Back to Home Button ── */
+.missions-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--white);
+  border: 1.5px solid #dcebd4;
+  color: var(--primary-dark);
+  font-weight: 700;
+  font-size: 14px;
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 2px 8px rgba(24, 70, 44, 0.04);
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.missions-back-btn:hover {
+  background: var(--green-50);
+  border-color: var(--green-300);
+  color: var(--primary);
+  transform: translateX(-2px);
+  box-shadow: 0 4px 12px rgba(26, 140, 63, 0.12);
+}
+
+/* ── Tabs List ── */
+.missions-tabs {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 4px 2px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.missions-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.missions-tab {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 18px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 700;
+  color: #4b5563;
+  background: var(--white);
+  border: 1.5px solid #e5ede3;
+  transition: all var(--transition-fast);
+  white-space: nowrap;
+  flex-shrink: 0;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(24, 70, 44, 0.03);
+}
+
+.missions-tab:hover {
+  color: var(--primary);
+  background: var(--green-50);
+  border-color: var(--green-200);
+}
+
+.missions-tab.active {
+  color: var(--white);
+  background: var(--primary-gradient);
+  border-color: transparent;
+  box-shadow: 0 4px 16px rgba(26, 140, 63, 0.28);
+}
+
+.missions-tab .tab-emoji {
+  font-size: 16px;
+  line-height: 1;
+}
+
+/* ── Content Container ── */
+.missions-content {
+  flex: 1;
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.mp-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* ── Mascot Welcome Banner ── */
+.mp-mascot-banner {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 18px 28px;
+  border: 1.5px solid #dcebd4;
+  border-radius: 24px;
+  background: linear-gradient(110deg, #f4fae9 0%, #ffffff 78%);
+  box-shadow: 0 8px 24px rgba(24, 70, 44, 0.06);
+}
+
+.mp-mascot-img-box {
+  width: 80px;
+  height: 80px;
+  flex-shrink: 0;
+}
+
+.mp-mascot-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.12));
+  animation: gentleBounce 3.5s ease-in-out infinite;
+}
+
+.mp-mascot-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.mp-mascot-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 6px;
+}
+
+.mp-mascot-name {
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--green-900);
+}
+
+.mp-points-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fde68a;
+  padding: 4px 14px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 800;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+.mp-mascot-quote {
+  font-size: 15px;
+  font-weight: 600;
+  color: #4b5563;
+  line-height: 1.55;
+  margin: 0;
+}
+
+/* ── Main Mission Card ── */
+.mp-main-card {
+  background: var(--white);
+  border-radius: 28px;
+  border: 1.5px solid #e2ece0;
+  box-shadow: 0 12px 36px rgba(24, 70, 44, 0.07);
+  padding: 36px 40px;
+}
+
+/* ── Card Header ── */
+.mp-card-header {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1.5px solid #f0fdf4;
+}
+
+.mp-header-icon-box {
+  width: 62px;
+  height: 62px;
+  border-radius: 20px;
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(34, 197, 94, 0.1);
+}
+
+.mp-header-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.mp-category-badge {
+  align-self: flex-start;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: var(--primary);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 3px 12px;
+  border-radius: var(--radius-full);
+}
+
+.mp-title {
+  font-size: 30px;
+  font-weight: 900;
+  color: var(--green-900);
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.25;
+}
+
+/* ── Hero Section (Visual + Story) ── */
+.mp-hero-section {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 36px;
+  align-items: start;
+  margin-bottom: 40px;
+}
+
+.mp-visual-frame {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #dcfce7 100%);
+  border: 2px solid #bbf7d0;
+  height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.mp-visual-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 10;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.96);
+  color: var(--primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  border: 1px solid #bbf7d0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06);
+}
+
+.mp-visual-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.mp-visual-frame:hover .mp-visual-img {
+  transform: scale(1.04);
+}
+
+.mp-visual-scene {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-story-frame {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mp-story-title-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.mp-story-icon {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.mp-story-heading {
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--green-900);
+  margin: 0;
+}
+
+.mp-story-overview {
+  font-size: 15.5px;
+  font-weight: 500;
+  color: #4b5563;
+  line-height: 1.75;
+  margin: 0;
+}
+
+.mp-toggle-btn {
+  align-self: flex-start;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-dark);
+  background: #f0fdf4;
+  border: 1.5px solid #bbf7d0;
+  padding: 9px 18px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mp-toggle-btn:hover {
+  background: #dcfce7;
+  border-color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.mp-expanded-box {
+  background: #f0fdf4;
+  border: 1.5px solid #dcfce7;
+  border-radius: 18px;
+  padding: 18px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeIn 0.25s ease;
+}
+
+.mp-fun-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  color: var(--green-800);
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.mp-fact-emoji {
+  font-size: 20px;
+  flex-shrink: 0;
+  line-height: 1.2;
+}
+
+.mp-materials-section {
+  border-top: 1px solid #dcfce7;
+  padding-top: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.mp-materials-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--gray-800);
+}
+
+.mp-materials-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mp-mat-tag {
+  background: var(--white);
+  border: 1px solid #bbf7d0;
+  color: #374151;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 10px;
+}
+
+/* ── Steps Section ── */
+.mp-steps-section {
+  border-top: 2px dashed #e6efe2;
+  padding-top: 36px;
+}
+
+.mp-steps-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 26px;
+}
+
+.mp-steps-title {
+  font-size: 23px;
+  font-weight: 800;
+  color: var(--green-900);
+  margin: 0;
+}
+
+.mp-steps-tip {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary);
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+}
+
+.mp-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+/* ── Individual Step Card ── */
+.mp-step-card {
+  background: var(--white);
+  border: 2px solid #e8efe6;
+  border-radius: 22px;
+  padding: 26px 22px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  box-shadow: 0 4px 18px rgba(24, 70, 44, 0.04);
+  transition: all 0.25s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.mp-step-card:hover {
+  border-color: var(--green-400);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 28px rgba(24, 70, 44, 0.09);
+}
+
+.mp-step-card.is-selected {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2), 0 10px 28px rgba(24, 70, 44, 0.08);
+}
+
+.mp-step-top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.mp-step-num {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: #ffffff;
+  font-weight: 900;
+  font-size: 14px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 2px 6px rgba(26, 140, 63, 0.25);
+}
+
+.mp-step-toggle-hint {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--primary);
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  padding: 3px 10px;
+  border-radius: 8px;
+}
+
+.mp-step-graphic {
+  width: 100%;
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0 18px;
+}
+
+.mp-step-text {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--green-900);
+  line-height: 1.5;
+  margin: 0;
+  min-height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mp-step-details-box {
+  width: 100%;
+  margin-top: 16px;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: #374151;
+  font-weight: 600;
+  text-align: left;
+  animation: fadeIn 0.2s ease;
+}
+
+.mp-step-details-box p {
+  margin: 0;
+}
+
+/* ── Bottom Note ── */
+.mp-bottom-note {
+  margin-top: 36px;
+  padding: 18px 26px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, #f0fdf4 0%, #e8f9ed 100%);
+  border: 1.5px solid #bbf7d0;
+  color: var(--green-800);
+  font-size: 14.5px;
+  font-weight: 700;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(24, 70, 44, 0.04);
+  line-height: 1.6;
+}
+
+
+/* ── Keyframes ── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes gentleBounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+/* ── Responsive ── */
+@media (max-width: 860px) {
+  .mp-hero-section {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .mp-visual-frame {
+    height: 200px;
+  }
+
+  .mp-main-card {
+    padding: 26px 20px;
+  }
+
+  .missions-content {
+    padding: 20px 16px 48px;
+  }
+
+  .mp-title {
+    font-size: 24px;
+  }
+
+  .mp-steps-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .missions-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+
+  .missions-tabs {
+    width: 100%;
+  }
+
+  .mp-mascot-banner {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 16px;
+  }
+
+  .mp-mascot-header {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mp-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+}
